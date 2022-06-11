@@ -42,3 +42,6 @@ const String tgrj = 'http://api.weijieyue.cn/api/tgrj/api.php';
 
 /// http://api.weijieyue.cn/api/tq/api.php?msg=洛阳&b=1
 const String weather = 'http://api.weijieyue.cn/api/tq/api.php?msg=';
+
+/// http://api.weijieyue.cn/api/tupian/api.php?lx=美女/风景/动漫/游戏/文字/情感&type=text/xml/js
+const String hdPicture = 'http://api.weijieyue.cn/api/tupian/api.php?lx=';

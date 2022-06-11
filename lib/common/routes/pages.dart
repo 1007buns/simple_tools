@@ -5,6 +5,7 @@ import 'package:simple_tools/pages/utils_pages/changya/changya.dart';
 import 'package:simple_tools/pages/utils_pages/get_out_icon/get_out_icon.dart';
 import 'package:simple_tools/pages/utils_pages/guess_image/guess_image.dart';
 import 'package:simple_tools/pages/utils_pages/gztp/gztp.dart';
+import 'package:simple_tools/pages/utils_pages/hd_picture/hd_picture.dart';
 import 'package:simple_tools/pages/utils_pages/lzy/lzy.dart';
 import 'package:simple_tools/pages/utils_pages/maijiaxiu/maijiaxiu.dart';
 import 'package:simple_tools/pages/utils_pages/pazhan/pazhan.dart';
@@ -75,6 +76,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.WEATHER,
       page: () => const WeatherPage(),
+    ),
+    GetPage(
+      name: AppRoutes.HDPICTURE,
+      page: () => const HDPicturePage(),
     ),
   ];
 }

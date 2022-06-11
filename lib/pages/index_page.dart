@@ -209,6 +209,15 @@ class _IndexPageState extends State<IndexPage>
                 Get.toNamed('/weather');
               },
             ),
+            UtilsListTitleWidget(
+              leading: const Icon(Icons.child_care),
+              title: '高清图片',
+              subtitle: '#hd_picture',
+              trailing: const Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Get.toNamed('/hd_picture');
+              },
+            ),
           ],
         ),
         Container(
