@@ -18,4 +18,5 @@ class AppRoutes {
   static const LZY = '/lzy';
   static const TGRJ = '/tgrj';
   static const WEATHER = '/weather';
+  static const HDPICTURE = '/hd_picture';
 }
