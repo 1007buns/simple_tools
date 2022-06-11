@@ -5,9 +5,12 @@ import 'package:simple_tools/pages/utils_pages/changya/changya.dart';
 import 'package:simple_tools/pages/utils_pages/get_out_icon/get_out_icon.dart';
 import 'package:simple_tools/pages/utils_pages/guess_image/guess_image.dart';
 import 'package:simple_tools/pages/utils_pages/gztp/gztp.dart';
+import 'package:simple_tools/pages/utils_pages/lzy/lzy.dart';
 import 'package:simple_tools/pages/utils_pages/maijiaxiu/maijiaxiu.dart';
 import 'package:simple_tools/pages/utils_pages/pazhan/pazhan.dart';
 import 'package:simple_tools/pages/utils_pages/ping/ping.dart';
+import 'package:simple_tools/pages/utils_pages/tgrj/tgrj.dart';
+import 'package:simple_tools/pages/utils_pages/weather/weather.dart';
 import 'package:simple_tools/pages/utils_pages/xiaoai_chat/xiaoai_chat.dart';
 import 'package:simple_tools/pages/utils_pages/xiaodaji_chat/xiaodaji_chat.dart';
 
@@ -60,6 +63,18 @@ class AppPages {
     GetPage(
       name: AppRoutes.PING,
       page: () => const PingPage(),
+    ),
+    GetPage(
+      name: AppRoutes.LZY,
+      page: () => const LzyPage(),
+    ),
+    GetPage(
+      name: AppRoutes.TGRJ,
+      page: () => const TgrjPage(),
+    ),
+    GetPage(
+      name: AppRoutes.WEATHER,
+      page: () => const WeatherPage(),
     ),
   ];
 }

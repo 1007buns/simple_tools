@@ -1,7 +1,7 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:simple_tools/common/widgets/utils_list_title.dart';
-import 'package:simple_tools/pages/utils_pages/get_out_icon/get_out_icon.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -28,7 +28,7 @@ class _IndexPageState extends State<IndexPage>
         elevation: 0.0,
       ),
       body: NestedScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             buildSliverAppBar(),
@@ -40,12 +40,17 @@ class _IndexPageState extends State<IndexPage>
     );
   }
 
+  final _tabImage = [
+    'https://files.flutter-io.cn/cms/static/ed2e069ee37807f5975a.jpg',
+    'https://files.flutter-io.cn/cms/static/d07045a740a55d36323e.jpg',
+    'https://files.flutter-io.cn/cms/static/d07045a740a55d36323e.jpg',
+  ];
   SliverPersistentHeader buildSliverPersistentHeader() {
     return SliverPersistentHeader(
       pinned: true,
       delegate: StickyTabBarDelegate(
         child: TabBar(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           labelColor: Colors.black,
           controller: _tabController,
           tabs: const <Widget>[
@@ -63,18 +68,19 @@ class _IndexPageState extends State<IndexPage>
       pinned: false,
       flexibleSpace: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        child: PageView(
-          children: const [
-            Center(
-              child: Icon(Icons.flutter_dash),
-            ),
-            Center(
-              child: Icon(Icons.flutter_dash_outlined),
-            ),
-            Center(
-              child: Icon(Icons.flutter_dash_rounded),
-            ),
-          ],
+        child: Swiper(
+          itemBuilder: (BuildContext context, int index) {
+            return ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.network(
+                _tabImage[index],
+                fit: BoxFit.cover,
+              ),
+            );
+          },
+          itemCount: _tabImage.length,
+          viewportFraction: 0.8,
+          scale: 0.9,
         ),
       ),
     );
@@ -174,6 +180,33 @@ class _IndexPageState extends State<IndexPage>
               trailing: const Icon(Icons.keyboard_arrow_right),
               onTap: () {
                 Get.toNamed('/ping');
+              },
+            ),
+            UtilsListTitleWidget(
+              leading: const Icon(Icons.child_care),
+              title: '蓝奏云解析',
+              subtitle: '#lzy',
+              trailing: const Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Get.toNamed('/lzy');
+              },
+            ),
+            UtilsListTitleWidget(
+              leading: const Icon(Icons.child_care),
+              title: '舔狗日记',
+              subtitle: '#tgrj',
+              trailing: const Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Get.toNamed('/tgrj');
+              },
+            ),
+            UtilsListTitleWidget(
+              leading: const Icon(Icons.child_care),
+              title: '天气查询',
+              subtitle: '#weather',
+              trailing: const Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Get.toNamed('/weather');
               },
             ),
           ],

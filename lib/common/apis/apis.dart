@@ -33,3 +33,12 @@ const String maijiaXiu = 'http://api.weijieyue.cn/api/mjx/api.php';
 
 /// http://api.weijieyue.cn/api/ping/api.php?ip=[链接]
 const String ping = 'http://api.weijieyue.cn/api/ping/api.php?ip=';
+
+/// http://api.weijieyue.cn/api/lzy/api.php?url=[链接]
+const String lanzouyun = 'http://api.weijieyue.cn/api/lzy/api.php?url=';
+
+/// http://api.weijieyue.cn/api/tgrj/api.php 舔狗日记
+const String tgrj = 'http://api.weijieyue.cn/api/tgrj/api.php';
+
+/// http://api.weijieyue.cn/api/tq/api.php?msg=洛阳&b=1
+const String weather = 'http://api.weijieyue.cn/api/tq/api.php?msg=';

@@ -15,4 +15,7 @@ class AppRoutes {
   static const GZTP = '/gztp';
   static const MAIJIAXIU = '/maijia_xiu';
   static const PING = '/ping';
+  static const LZY = '/lzy';
+  static const TGRJ = '/tgrj';
+  static const WEATHER = '/weather';
 }
