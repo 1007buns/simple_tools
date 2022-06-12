@@ -16,6 +16,7 @@ import 'package:simple_tools/pages/utils_pages/xiaoai_chat/xiaoai_chat.dart';
 import 'package:simple_tools/pages/utils_pages/xiaodaji_chat/xiaodaji_chat.dart';
 import 'package:simple_tools/pages/utils_pages/xiaoshuo/xiaoshuo.dart';
 import 'package:simple_tools/pages/utils_pages/xingzuo/xingzuo.dart';
+import 'package:simple_tools/pages/utils_pages/yiyan/yiyan.dart';
 
 import 'names.dart';
 
@@ -90,6 +91,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.XIAOSHUO,
       page: () => const XiaoShuoPage(),
+    ),
+    GetPage(
+      name: AppRoutes.YIYAN,
+      page: () => const YiYanPage(),
     ),
   ];
 }

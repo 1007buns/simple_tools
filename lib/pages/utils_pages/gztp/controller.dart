@@ -5,10 +5,9 @@ import 'package:simple_tools/common/utils/dio_util/dio_response.dart';
 import 'package:simple_tools/common/utils/dio_util/dio_util.dart';
 
 class GztpController extends GetxController {
-  final selectIndex = 0.obs;
+  final selectIndex = 4.obs;
   final index = 0.obs;
-  final classImage =
-      'http://p8.qhimg.com/bdm/1600_900_85/t0190427d49ea5a611d.jpg'.obs;
+  final classImage = ''.obs;
 
   void onSelectedChanged(int index) {
     selectIndex.value = index;
@@ -35,6 +34,7 @@ class GztpController extends GetxController {
   ];
 
   Future<void> getGztp({required String classif}) async {
+    classImage.value = '';
     DioResponse res = await dioUtil.request(
       gztp + classif,
       method: DioMethod.get,
@@ -45,5 +45,11 @@ class GztpController extends GetxController {
       update();
       // print(res.data);
     }
+  }
+
+  @override
+  void onInit() async {
+    await getGztp(classif: msgList[selectIndex.value]);
+    super.onInit();
   }
 }

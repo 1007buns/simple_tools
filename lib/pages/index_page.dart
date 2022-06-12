@@ -1,7 +1,8 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:simple_tools/common/widgets/utils_list_title.dart';
+
+import 'information_pages/infomation.dart';
+import 'utils_pages/yi_api_utils.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -21,10 +22,16 @@ class _IndexPageState extends State<IndexPage>
   }
 
   @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('首页'),
+        title: const Text('Simple Tools'),
         elevation: 0.0,
       ),
       body: NestedScrollView(
@@ -50,6 +57,8 @@ class _IndexPageState extends State<IndexPage>
       pinned: true,
       delegate: StickyTabBarDelegate(
         child: TabBar(
+          labelStyle:
+              const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
           physics: const BouncingScrollPhysics(),
           labelColor: Colors.black,
           controller: _tabController,
@@ -89,158 +98,9 @@ class _IndexPageState extends State<IndexPage>
   TabBarView buildTabBarView() {
     return TabBarView(
       controller: _tabController,
-      children: <Widget>[
-        ListView(
-          children: [
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '恶搞qq头像表情包',
-              subtitle: '#pa',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/pa');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '看图猜成语',
-              subtitle: '#guess',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/guess_image');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '小爱同学聊天',
-              subtitle: '#xiaoaichat',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/xiaoai_chat');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '王者小妲己聊天',
-              subtitle: '#xiaodaji_chat',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/xiaodaji_chat');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '唱鸭随机用户歌曲',
-              subtitle: '#changya',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/changya');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '唱吧随机用户歌曲',
-              subtitle: '#changba',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/changba');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '扒站',
-              subtitle: '#pazhan',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/pazhan');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '各种图片',
-              subtitle: '#gztp',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/gztp');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '淘宝买家秀',
-              subtitle: '#miajia_xiu',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/maijia_xiu');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: 'ping域名',
-              subtitle: '#ping',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/ping');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '蓝奏云解析',
-              subtitle: '#lzy',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/lzy');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '舔狗日记',
-              subtitle: '#tgrj',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/tgrj');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '天气查询',
-              subtitle: '#weather',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/weather');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '高清图片',
-              subtitle: '#hd_picture',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/hd_picture');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '星座运势',
-              subtitle: '#xingzuo',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/xingzuo');
-              },
-            ),
-            UtilsListTitleWidget(
-              leading: const Icon(Icons.child_care),
-              title: '搜索小说',
-              subtitle: '#xiaoshuo',
-              trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: () {
-                Get.toNamed('/xiaoshuo');
-              },
-            ),
-          ],
-        ),
-        Container(
-          color: Colors.red,
-        ),
+      children: const <Widget>[
+        YiApiUtils(),
+        Infomation(),
       ],
     );
   }
@@ -256,7 +116,7 @@ class StickyTabBarDelegate extends SliverPersistentHeaderDelegate {
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       color: Theme.of(context).backgroundColor,
-      child: this.child,
+      child: child,
     );
   }
 

@@ -51,3 +51,6 @@ const String xingZuo = 'http://api.weijieyue.cn/api/xingzuo/api.php?msg=';
 
 // http://api.weijieyue.cn/api/xiaoshuo/api.php?msg=内容&=选择
 const String xiaoShuo = 'http://api.weijieyue.cn/api/xiaoshuo/api.php?msg=';
+
+/// http://api.weijieyue.cn/api/yy/api.php
+const String yiYan = 'http://api.weijieyue.cn/api/yy/api.php';

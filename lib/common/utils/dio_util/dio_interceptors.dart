@@ -6,6 +6,8 @@ import 'dio_response.dart';
 class DioInterceptors extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
+    // 头部添加token
+    options.headers["token"] = "JPyBUKPhNqf4WspC";
     handler.next(options);
   }
 

@@ -21,4 +21,6 @@ class AppRoutes {
   static const HDPICTURE = '/hd_picture';
   static const XINGZUO = '/xingzuo';
   static const XIAOSHUO = '/xiaoshuo';
+  static const COLORFHOTO = '/color_photo';
+  static const YIYAN = '/yiyan';
 }

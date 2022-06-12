@@ -26,7 +26,7 @@ class XiaoShuoController extends GetxController {
       imageUrl.value = data.substring(imageUrlStart, imageUrlEnd);
       print(imageUrl.value);
       int titleStart = data.indexOf('小说名') + 4;
-      int titleEnd = data.indexOf('作者') - 2;
+      int titleEnd = data.indexOf('作者') - 3;
       title.value = data.substring(titleStart, titleEnd);
       // print(title.value);
       int urlStart = data.indexOf('小说链接') + 5;

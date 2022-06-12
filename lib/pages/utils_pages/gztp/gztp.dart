@@ -38,7 +38,11 @@ class GztpPage extends StatelessWidget {
               ),
               SizedBox(
                 height: 300,
-                child: Image.network(_.classImage.value),
+                child: _.classImage.value.isNotEmpty
+                    ? Image.network(_.classImage.value)
+                    : const Center(
+                        child: Text('加载中...'),
+                      ),
               ),
               ElevatedButton(
                 onPressed: () {
