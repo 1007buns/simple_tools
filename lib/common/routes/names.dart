@@ -19,4 +19,6 @@ class AppRoutes {
   static const TGRJ = '/tgrj';
   static const WEATHER = '/weather';
   static const HDPICTURE = '/hd_picture';
+  static const XINGZUO = '/xingzuo';
+  static const XIAOSHUO = '/xiaoshuo';
 }

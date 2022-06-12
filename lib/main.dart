@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:simple_tools/common/routes/names.dart';
 import 'package:simple_tools/common/routes/pages.dart';
 
 import 'pages/index_page.dart';

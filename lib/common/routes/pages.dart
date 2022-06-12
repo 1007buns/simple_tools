@@ -14,6 +14,8 @@ import 'package:simple_tools/pages/utils_pages/tgrj/tgrj.dart';
 import 'package:simple_tools/pages/utils_pages/weather/weather.dart';
 import 'package:simple_tools/pages/utils_pages/xiaoai_chat/xiaoai_chat.dart';
 import 'package:simple_tools/pages/utils_pages/xiaodaji_chat/xiaodaji_chat.dart';
+import 'package:simple_tools/pages/utils_pages/xiaoshuo/xiaoshuo.dart';
+import 'package:simple_tools/pages/utils_pages/xingzuo/xingzuo.dart';
 
 import 'names.dart';
 
@@ -80,6 +82,14 @@ class AppPages {
     GetPage(
       name: AppRoutes.HDPICTURE,
       page: () => const HDPicturePage(),
+    ),
+    GetPage(
+      name: AppRoutes.XINGZUO,
+      page: () => const XingZuoPage(),
+    ),
+    GetPage(
+      name: AppRoutes.XIAOSHUO,
+      page: () => const XiaoShuoPage(),
     ),
   ];
 }

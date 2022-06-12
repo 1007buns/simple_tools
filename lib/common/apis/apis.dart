@@ -40,8 +40,14 @@ const String lanzouyun = 'http://api.weijieyue.cn/api/lzy/api.php?url=';
 /// http://api.weijieyue.cn/api/tgrj/api.php 舔狗日记
 const String tgrj = 'http://api.weijieyue.cn/api/tgrj/api.php';
 
-/// http://api.weijieyue.cn/api/tq/api.php?msg=洛阳&b=1
+/// http://api.weijieyue.cn/api/tq/api.php?msg=洛阳&b=1 // 天气查询
 const String weather = 'http://api.weijieyue.cn/api/tq/api.php?msg=';
 
 /// http://api.weijieyue.cn/api/tupian/api.php?lx=美女/风景/动漫/游戏/文字/情感&type=text/xml/js
 const String hdPicture = 'http://api.weijieyue.cn/api/tupian/api.php?lx=';
+
+/// http://api.weijieyue.cn/api/xingzuo/api.php?msg=[星座] // 星座
+const String xingZuo = 'http://api.weijieyue.cn/api/xingzuo/api.php?msg=';
+
+// http://api.weijieyue.cn/api/xiaoshuo/api.php?msg=内容&=选择
+const String xiaoShuo = 'http://api.weijieyue.cn/api/xiaoshuo/api.php?msg=';

@@ -218,6 +218,24 @@ class _IndexPageState extends State<IndexPage>
                 Get.toNamed('/hd_picture');
               },
             ),
+            UtilsListTitleWidget(
+              leading: const Icon(Icons.child_care),
+              title: '星座运势',
+              subtitle: '#xingzuo',
+              trailing: const Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Get.toNamed('/xingzuo');
+              },
+            ),
+            UtilsListTitleWidget(
+              leading: const Icon(Icons.child_care),
+              title: '搜索小说',
+              subtitle: '#xiaoshuo',
+              trailing: const Icon(Icons.keyboard_arrow_right),
+              onTap: () {
+                Get.toNamed('/xiaoshuo');
+              },
+            ),
           ],
         ),
         Container(

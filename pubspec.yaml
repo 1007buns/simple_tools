@@ -36,6 +36,7 @@ dependencies:
   audioplayers: ^0.20.1 #音频播放器
   card_swiper: ^2.0.4
   another_transformer_page_view: ^1.1.0
+  flutter_inappwebview: ^5.4.3+7
 
 dev_dependencies:
   flutter_test:

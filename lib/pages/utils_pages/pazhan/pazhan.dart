@@ -30,11 +30,11 @@ class PaZhanPage extends StatelessWidget {
               ),
               const Text('---爬取的网站均打包成 .zip格式---'),
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
                     // height: 50,
-                    width: 300,
+                    width: 250,
                     child: Text(
                       '打包地址：${_.url.value}',
                       maxLines: 2,

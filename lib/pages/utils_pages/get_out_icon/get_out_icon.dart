@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:simple_tools/common/apis/apis.dart';
+import 'package:simple_tools/common/utils/clipboard_tool/clipboard_tool.dart';
 
 import 'controller.dart';
 
@@ -19,24 +20,66 @@ class GetOutIconPage extends StatelessWidget {
         builder: (_) {
           return ListView(
             children: [
-              InkWell(
-                onTap: () {},
-                child: SizedBox(
-                  height: 300,
-                  width: double.infinity,
-                  child: PageView(
-                    children: [
-                      _.getOutQid.value == ''
-                          ? const Text('您输入的qq号码有误,请检查后重新输入')
-                          : Image.network(getOutIcon + _.getOutQid.value),
-                      _.getOutQid.value == ''
-                          ? const Text('您输入的qq号码有误,请检查后重新输入')
-                          : Image.network(getZanIcon + _.getOutQid.value),
-                      _.getOutQid.value == ''
-                          ? const Text('您输入的qq号码有误,请检查后重新输入')
-                          : Image.network(getDiuIcon + _.getOutQid.value),
-                    ],
-                  ),
+              SizedBox(
+                height: 300,
+                width: double.infinity,
+                child: PageView(
+                  children: [
+                    _.getOutQid.value == ''
+                        ? const Text('您输入的qq号码有误,请检查后重新输入')
+                        : Stack(
+                            children: [
+                              Image.network(
+                                getOutIcon + _.getOutQid.value,
+                                fit: BoxFit.cover,
+                              ),
+                              Positioned(
+                                right: 2,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    ClipboardTool.setDataToast(
+                                        getOutIcon + _.getOutQid.value);
+                                  },
+                                  child: const Text('复制图片链接'),
+                                ),
+                              ),
+                            ],
+                          ),
+                    _.getOutQid.value == ''
+                        ? const Text('您输入的qq号码有误,请检查后重新输入')
+                        : Stack(
+                            children: [
+                              Image.network(getZanIcon + _.getOutQid.value),
+                              Positioned(
+                                right: 2,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    ClipboardTool.setDataToast(
+                                        getZanIcon + _.getOutQid.value);
+                                  },
+                                  child: const Text('复制图片链接'),
+                                ),
+                              ),
+                            ],
+                          ),
+                    _.getOutQid.value == ''
+                        ? const Text('您输入的qq号码有误,请检查后重新输入')
+                        : Stack(
+                            children: [
+                              Image.network(getDiuIcon + _.getOutQid.value),
+                              Positioned(
+                                right: 2,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    ClipboardTool.setDataToast(
+                                        getDiuIcon + _.getOutQid.value);
+                                  },
+                                  child: const Text('复制图片链接'),
+                                ),
+                              ),
+                            ],
+                          ),
+                  ],
                 ),
               ),
               const Center(
