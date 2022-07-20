@@ -15,11 +15,10 @@ class _InfomationState extends State<Infomation>
     with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
-    return InfomationWidget();
+    return const InfomationWidget();
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 }
 
@@ -36,26 +35,18 @@ class InfomationWidget extends StatelessWidget {
       builder: (_) {
         return ListView(
           children: [
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _.name.value.isNotEmpty
-                    ? Text(
-                        _.name.value,
-                        style: const TextStyle(
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      )
-                    : const Text(
-                        '换一个站点试试吧~',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w500,
-                        ),
+            if (_.name.value.isNotEmpty)
+              Center(
+                child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      _.name.value,
+                      style: const TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.w500,
                       ),
+                    )),
               ),
-            ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
@@ -110,12 +101,24 @@ class InfomationWidget extends StatelessWidget {
                       },
                     ),
                   )
-                : const Center(
+                : Center(
                     child: Padding(
-                      padding: EdgeInsets.all(32.0),
-                      child: Text(
-                        '暂无数据',
-                        style: TextStyle(fontSize: 28.0),
+                      padding: const EdgeInsets.all(32.0),
+                      child: Column(
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.all(24.0),
+                            child: CircularProgressIndicator(),
+                          ),
+                          Text(
+                            '暂无数据',
+                            style: TextStyle(fontSize: 28.0),
+                          ),
+                          Text(
+                            '换一个站点试试吧...',
+                            style: TextStyle(fontSize: 20.0),
+                          ),
+                        ],
                       ),
                     ),
                   ),

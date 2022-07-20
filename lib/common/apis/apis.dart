@@ -54,3 +54,6 @@ const String xiaoShuo = 'http://api.weijieyue.cn/api/xiaoshuo/api.php?msg=';
 
 /// http://api.weijieyue.cn/api/yy/api.php
 const String yiYan = 'http://api.weijieyue.cn/api/yy/api.php';
+
+/// http://api.weijieyue.cn/api/wyyc/api.php?type=[类型] // type：推荐/热评故事
+const String cloudVillage = 'http://api.weijieyue.cn/api/wyyc/api.php?type=';

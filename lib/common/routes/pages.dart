@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 import 'package:simple_tools/pages/index_page.dart';
+import 'package:simple_tools/pages/swiper_pages/check_areas_at_risk/check_areas_at_risk.dart';
 import 'package:simple_tools/pages/utils_pages/changba/changba.dart';
 import 'package:simple_tools/pages/utils_pages/changya/changya.dart';
+import 'package:simple_tools/pages/utils_pages/cloud_village/cloud_village.dart';
 import 'package:simple_tools/pages/utils_pages/get_out_icon/get_out_icon.dart';
 import 'package:simple_tools/pages/utils_pages/guess_image/guess_image.dart';
 import 'package:simple_tools/pages/utils_pages/gztp/gztp.dart';
@@ -95,6 +97,14 @@ class AppPages {
     GetPage(
       name: AppRoutes.YIYAN,
       page: () => const YiYanPage(),
+    ),
+    GetPage(
+      name: AppRoutes.CLOUD_VILLAGE,
+      page: () => const CloudVillagePage(),
+    ),
+    GetPage(
+      name: AppRoutes.CHECK_AREAS_AT_RISK,
+      page: () => const CheckAreasAtRiskPage(),
     ),
   ];
 }

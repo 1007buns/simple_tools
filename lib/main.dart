@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Simple-tools',
       theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
-          appBarTheme: const AppBarTheme(elevation: 0.0)),
+        primarySwatch: Colors.blueGrey,
+        appBarTheme: const AppBarTheme(elevation: 0.0),
+      ),
       home: const IndexPage(),
       getPages: AppPages.routes,
       initialRoute: AppPages.INITIAL,

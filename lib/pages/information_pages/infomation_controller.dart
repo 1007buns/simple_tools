@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:simple_tools/common/utils/dio_util/dio_method.dart';
 import 'package:simple_tools/common/utils/dio_util/dio_response.dart';
@@ -56,7 +57,7 @@ class InfomationController extends GetxController {
   }
 
   Future<void> getInfo({required String info}) async {
-    print('获取资讯$info');
+    debugPrint('获取资讯$info');
     infoList.clear();
     DioResponse res = await dioUtil.request(
       'https://v2.alapi.cn/api/tophub/get',
@@ -70,7 +71,7 @@ class InfomationController extends GetxController {
       name.value = data['name'];
       last_update.value = data['last_update'];
       infoList.value = data['list'];
-      print(data);
+      debugPrint(data.toString());
       update();
     }
   }

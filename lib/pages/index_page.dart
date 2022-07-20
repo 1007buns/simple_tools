@@ -1,7 +1,7 @@
-import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 
 import 'information_pages/infomation.dart';
+import 'swiper_pages/index_swiper.dart';
 import 'utils_pages/yi_api_utils.dart';
 
 class IndexPage extends StatefulWidget {
@@ -47,18 +47,15 @@ class _IndexPageState extends State<IndexPage>
     );
   }
 
-  final _tabImage = [
-    'https://files.flutter-io.cn/cms/static/ed2e069ee37807f5975a.jpg',
-    'https://files.flutter-io.cn/cms/static/d07045a740a55d36323e.jpg',
-    'https://files.flutter-io.cn/cms/static/d07045a740a55d36323e.jpg',
-  ];
   SliverPersistentHeader buildSliverPersistentHeader() {
     return SliverPersistentHeader(
       pinned: true,
       delegate: StickyTabBarDelegate(
         child: TabBar(
-          labelStyle:
-              const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+          labelStyle: const TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.w500,
+          ),
           physics: const BouncingScrollPhysics(),
           labelColor: Colors.black,
           controller: _tabController,
@@ -77,20 +74,7 @@ class _IndexPageState extends State<IndexPage>
       pinned: false,
       flexibleSpace: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        child: Swiper(
-          itemBuilder: (BuildContext context, int index) {
-            return ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: Image.network(
-                _tabImage[index],
-                fit: BoxFit.cover,
-              ),
-            );
-          },
-          itemCount: _tabImage.length,
-          viewportFraction: 0.8,
-          scale: 0.9,
-        ),
+        child: IndexSwiper(),
       ),
     );
   }

@@ -182,6 +182,15 @@ class YiApiUtilsWidget extends StatelessWidget {
             Get.toNamed('/yiyan');
           },
         ),
+        UtilsListTitleWidget(
+          leading: const Icon(Icons.child_care),
+          title: '网易云村',
+          subtitle: '#cloud_village',
+          trailing: const Icon(Icons.keyboard_arrow_right),
+          onTap: () {
+            Get.toNamed('/cloud_village');
+          },
+        ),
       ],
     );
   }

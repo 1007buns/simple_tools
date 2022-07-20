@@ -31,12 +31,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5 #状态管理
   dio: ^4.0.6 #网络请求
-
   flutter_easyloading: ^3.0.5 # 简单加载
   audioplayers: ^0.20.1 #音频播放器
   card_swiper: ^2.0.4
   another_transformer_page_view: ^1.1.0
-  flutter_inappwebview: ^5.4.3+7
+  flutter_inappwebview: ^5.4.3+7 #webview
+  video_player: ^2.4.4
 
 dev_dependencies:
   flutter_test:

@@ -23,4 +23,6 @@ class AppRoutes {
   static const XIAOSHUO = '/xiaoshuo';
   static const COLORFHOTO = '/color_photo';
   static const YIYAN = '/yiyan';
+  static const CLOUD_VILLAGE = '/cloud_village';
+  static const CHECK_AREAS_AT_RISK = '/check_areas_at_risk';
 }
