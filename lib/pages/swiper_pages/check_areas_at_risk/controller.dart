@@ -13,17 +13,7 @@ class CheckAreasAtRiskController extends GetxController {
   final high_list = [].obs;
   final middle_list = [].obs;
 
-  final communitys = [
-    "北疆社区"
-        "东城社区"
-        "额仁社区"
-        "呼和社区"
-        "南苑社区"
-        "乌兰社区"
-        "西城社区"
-        "锡林社区"
-        "格日勒敖都苏木"
-  ];
+  
   Future<void> getCheckAreasAtRisk() async {
     DioResponse res = await dioUtil.request(
       CHECK_AREAS_AT_RISK,
